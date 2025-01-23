@@ -6,6 +6,7 @@ import com.wbs.util.SqlQueryUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main_aufgabe_2
