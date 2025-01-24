@@ -8,6 +8,10 @@ public class Mitarbeiter
     private String mitarbeiterPLZ;
     private int abteilungsnummer;
 
+    public Mitarbeiter()
+    {
+    }
+
     public Mitarbeiter(String mitarbeiternummer, boolean maschinenberechtigung, String mitarbeitername, String mitarbeiterPLZ, int abteilungsnummer)
     {
         this.mitarbeiternummer = mitarbeiternummer;

@@ -5,6 +5,10 @@ public class Baustelle
     private String baustellennummer;
     private String baustellenbezeichnung;
 
+    public Baustelle()
+    {
+    }
+
     public Baustelle(String baustellennummer, String baustellenbezeichnung)
     {
         this.baustellennummer = baustellennummer;

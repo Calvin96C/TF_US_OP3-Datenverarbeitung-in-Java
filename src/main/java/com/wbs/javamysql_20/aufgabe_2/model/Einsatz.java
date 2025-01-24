@@ -6,6 +6,10 @@ public class Einsatz
     private String baustellennummer;
     private int stunden;
 
+    public Einsatz()
+    {
+    }
+
     public Einsatz(String mitarbeiternummer, String baustellennummer, int stunden)
     {
         this.mitarbeiternummer = mitarbeiternummer;
