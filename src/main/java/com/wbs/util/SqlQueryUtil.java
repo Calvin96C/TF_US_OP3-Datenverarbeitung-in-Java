@@ -67,30 +67,13 @@ public class SqlQueryUtil {
         }
     }
 
-    /*
-    public static <T> List<T> resultSetToList(String databaseName, Class<?> classProperty)
-    {
-        String tableName = classProperty.getSimpleName().toLowerCase();
-        Field[] fields = classProperty.getDeclaredFields();
-        List<T> resultList = new ArrayList<>();
-        String queryString = "select * from " + tableName;
-
-        QueryResult queryResult = null;
-
-        try
-        {
-
-        }
-        catch (SQLException ex)
-        {
-            ex.printStackTrace();
-        }
-        finally
-        {
-            closeQueryResult(queryResult);
-        }
-    }*/
-
+    /**
+     *
+     * @param databaseName        The name of the database as a string.
+     * @param classProperty           The class type to map each row of the result set to.
+     * @return                                      A list of objects of type T, populated with data from the database.
+     * @param <T>                              The type of objects in the resulting list.
+     */
     public static <T> List<T> resultSetToList(String databaseName, Class<T> classProperty) {
         String tableName = classProperty.getSimpleName().toLowerCase();
         Field[] fields = classProperty.getDeclaredFields();
@@ -103,10 +86,10 @@ public class SqlQueryUtil {
         {
             queryResult = getQueryResult(databaseName, queryString);
             ResultSet resultSet = queryResult.getResultSet();
+            T instance = null;
 
             while (resultSet.next())
             {
-                T instance;
                 try {
                     // Create a new instance of the class dynamically
                     instance = classProperty.getDeclaredConstructor().newInstance();

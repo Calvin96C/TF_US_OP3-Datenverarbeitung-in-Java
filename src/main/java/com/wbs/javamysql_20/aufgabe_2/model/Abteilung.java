@@ -5,6 +5,10 @@ public class Abteilung
     private int abteilungsnummer;
     private String abteilungsname;
 
+    public Abteilung()
+    {
+    }
+
     public Abteilung(int abteilungsnummer, String abteilungsname)
     {
         this.abteilungsnummer = abteilungsnummer;
