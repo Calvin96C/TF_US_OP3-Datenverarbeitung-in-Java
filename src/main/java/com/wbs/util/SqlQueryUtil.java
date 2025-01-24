@@ -10,7 +10,8 @@ import java.util.List;
 public class SqlQueryUtil {
 
     // Encapsulate resources in a single class
-    public static class QueryResult{
+    public static class QueryResult
+    {
         private final Connection connection;
         private final Statement statement;
         private final ResultSet resultSet;
@@ -146,20 +147,6 @@ public class SqlQueryUtil {
         }
 
         return resultList;
-    }
-
-    public static void printClassProperties(Class<?> clazz) {
-        // Get all declared fields of the class
-        Field[] fields = clazz.getDeclaredFields();
-        System.out.println(clazz.getSimpleName().toLowerCase());
-        // Loop through the fields and print their types and names
-        for (Field field : fields) {
-            String fieldName = field.getName();
-            String fieldType = field.getType().getSimpleName(); // For simple name like "int", "String"
-            // Or field.getType().getName(); // For fully qualified name like "java.lang.String"
-
-            System.out.println("Property Name: " + fieldName + ", Property Type: " + fieldType);
-        }
     }
 
     private static void closeResources(Connection connection, Statement statement, ResultSet resultSet) {
